@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Navbar from "./LandingPage_Component/Navbar";
 import HeroSection from "./LandingPage_Component/HeroSection";
 import InvestmentSection from "./LandingPage_Component/InvestmentSection";
