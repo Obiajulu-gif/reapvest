@@ -1,6 +1,6 @@
 import React from "react";
-import TypewriterEffect from "../components/TypewriterEffect"; // Import the client-side component
-
+import TypewriterEffect from "../TypewriterEffect"; // Import the client-side component
+import Link from "next/link";
 const HeroSection = () => {
 	return (
 		<section
@@ -30,9 +30,11 @@ const HeroSection = () => {
 					<button className="px-6 py-3 bg-transparent border border-white text-white rounded-md hover:bg-white hover:text-gray-800 transition">
 						Read More
 					</button>
-					<button className="px-6 py-3 bg-primary text-white rounded-md hover:opacity-90 transition">
-						Sign Up For Free &rarr;
-					</button>
+					<Link href="/onboarding">
+						<button className="px-6 py-3 bg-primary text-white rounded-md hover:opacity-90 transition">
+							Sign Up For Free &rarr;
+						</button>
+					</Link>
 				</div>
 			</div>
 		</section>

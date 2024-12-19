@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-
+import Link from "next/link";
 const onboardingData = [
 	{
 		title: "Savings Buddies",
@@ -52,35 +52,18 @@ const OnboardingScreen = () => {
 	};
 
 	return (
-		<div className="min-h-screen flex">
-			{/* Left Panel */}
-			<div className="w-1/2 hidden md:flex items-center justify-center relative">
-				<div className="absolute inset-0">
-					<Image
-						src="/onboarding_image/onboarding_left.svg"
-						alt="Background Pattern"
-						layout="fill"
-						objectFit="cover"
-						priority
-					/>
-				</div>
-				<div className="relative z-10">
-					<Image
-						src="/onboarding_image/reapvestlogo.svg"
-						alt="Reapvest Logo"
-						width={300}
-						height={150}
-					/>
-				</div>
-			</div>
-
+		<>
 			{/* Right Panel */}
-			<div className="flex-1 flex flex-col justify-center items-center bg-white p-8">
+			<div className="flex-1 flex flex-col justify-center items-center bg-white p-8 md:mt-20">
 				<div className="flex flex-col items-center justify-center text-center">
 					<Image
 						src={onboardingData[currentScreen].image}
 						alt={onboardingData[currentScreen].title}
-						width={300}
+						width={
+							typeof window !== "undefined" && window.innerWidth < 768
+								? "150"
+								: "300"
+						}
 						height={300}
 					/>
 					<h2 className="text-2xl font-bold text-gray-900 mt-6">
@@ -104,7 +87,7 @@ const OnboardingScreen = () => {
 				</div>
 
 				{/* Buttons */}
-				<div className="flex justify-between w-full max-w-md mt-6">
+				<div className="flex justify-between w-full max-w-md mt-6 m">
 					{onboardingData[currentScreen].showGetStarted && (
 						<button
 							className="w-full px-6 py-3 bg-green-600 text-white rounded-md text-lg hover:bg-green-700 transition"
@@ -131,17 +114,22 @@ const OnboardingScreen = () => {
 					)}
 					{onboardingData[currentScreen].showLogin && (
 						<div className="flex gap-4 justify-center w-full">
-							<button className="flex-1 px-6 py-3 bg-green-600 text-white rounded-md text-lg hover:bg-green-700 transition">
-								Login
-							</button>
-							<button className="flex-1 px-6 py-3 bg-transparent text-green-600 border border-green-600 rounded-md text-lg hover:bg-green-100 transition">
-								Sign Up
-							</button>
+							<Link href="/login" className="flex-1 px-6 py-3 bg-green-600 text-white rounded-md text-lg hover:bg-green-700 transition flex items-center justify-center">
+								<button >
+									Login
+								</button>
+							</Link>
+
+							<Link href="/signup	" className="flex-1 px-6 py-3 bg-transparent text-green-600 border border-green-600 rounded-md text-lg hover:bg-green-100 transition flex items-center justify-center">
+								<button >
+									Sign Up
+								</button>
+							</Link>
 						</div>
 					)}
 				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-
+import Link from "next/link";
 const Navbar = () => {
 	// State to manage mobile menu toggle
 	const [isOpen, setIsOpen] = useState(false);
@@ -40,12 +40,9 @@ const Navbar = () => {
 						Sign In
 					</a>
 					{/* Sign Up Button */}
-					<a
-						href="#signup"
-						className="bg-primary text-white px-4 py-2 rounded-md hover:opacity-90"
-					>
-						Sign Up For Free
-					</a>
+					<Link href="/onboarding" className="bg-primary text-white px-4 py-2 rounded-md hover:opacity-90">
+							Sign Up For Free
+					</Link>
 				</div>
 
 				{/* Mobile Menu Toggle Button */}
@@ -112,12 +109,9 @@ const Navbar = () => {
 					>
 						Sign In
 					</a>
-					<a
-						href="#signup"
-						className="block text-center bg-primary text-white mx-4 py-2 rounded-md"
-					>
-						Sign Up For Free
-					</a>
+					<Link href="/onboarding" className="block text-center bg-primary text-white mx-4 py-2 rounded-md">
+							Sign Up For Free
+					</Link>
 				</div>
 			)}
 		</nav>
