@@ -149,7 +149,7 @@ const SignupPage = () => {
 	);
 
 	return (
-		<div className="md:min-h-screen mt-10 text-white flex justify-center items-center px-4">
+		<div className="md:min-h-screen mt-1 text-white flex justify-center items-center px-4">
 			<div className="max-w-lg w-full text-secondary p-6 rounded-lg">
 				<h2 className="text-2xl font-bold mb-2">
 					{stepHeaders[step - 1].title}

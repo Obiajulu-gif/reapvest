@@ -36,7 +36,7 @@ const Navbar = () => {
 						FAQs
 					</a>
 					{/* Sign In */}
-					<a href="#signin" className="text-primary hover:text-gray-800">
+					<a href="/signin" className="text-primary hover:text-gray-800">
 						Sign In
 					</a>
 					{/* Sign Up Button */}
@@ -104,7 +104,7 @@ const Navbar = () => {
 						FAQs
 					</a>
 					<a
-						href="#signin"
+						href="/signin"
 						className="block px-4 py-2 text-gray-600 hover:bg-gray-50"
 					>
 						Sign In
