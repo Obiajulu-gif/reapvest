@@ -48,13 +48,15 @@ const InvestmentSection = () => {
 				</div>
 
 				{/* Right Side Image */}
-				<div className="mt-8 md:mt-0 md:w-1/2 flex justify-center">
+				<div className="mt-8 md:mt-0 md:w-1/2 flex justify-center relative">
+					{/* Glowing Effect */}
+					<div className="absolute -inset-8 rounded-full bg-gradient-to-r from-yellow-400 via-blue-500 to-purple-500 blur-3xl opacity-40"></div>
 					<Image
 						src="/LandingPageImages/phoneview.png"
 						alt="Mobile Investment Preview"
 						width={320}
 						height={500}
-						className="w-60 md:w-80"
+						className="relative w-60 md:w-80 rounded-lg"
 					/>
 				</div>
 			</div>
@@ -77,7 +79,7 @@ const InvestmentSection = () => {
 								index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
 							} items-center text-center md:text-left gap-8 md:gap-12`}
 						>
-							{/* Image with Offset Background */}
+							{/* Image with Offset Background and Glow */}
 							<div className="relative mb-4">
 								<div className="absolute inset-0 border-2 border-gray-200 translate-x-4 translate-y-4 rounded-lg"></div>
 								<Image
@@ -91,10 +93,10 @@ const InvestmentSection = () => {
 
 							{/* Text Content */}
 							<div className="w-full md:w-1/2 space-y-4">
-								<h3 className="text-4xl md:text-2xl  font-bold text-secondary">
+								<h3 className="text-2xl font-bold text-secondary">
 									{investment.title}
 								</h3>
-								<p className="text-gray-600 ">{investment.description}</p>
+								<p className="text-gray-600">{investment.description}</p>
 								<a
 									href="#"
 									className="text-green-600 font-bold flex items-center justify-center md:justify-start gap-2 hover:text-green-700 transition"
