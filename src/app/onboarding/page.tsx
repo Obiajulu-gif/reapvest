@@ -114,7 +114,7 @@ const OnboardingScreen = () => {
 					)}
 					{onboardingData[currentScreen].showLogin && (
 						<div className="flex gap-4 justify-center w-full">
-							<Link href="/login" className="flex-1 px-6 py-3 bg-green-600 text-white rounded-md text-lg hover:bg-green-700 transition flex items-center justify-center">
+							<Link href="/signin" className="flex-1 px-6 py-3 bg-green-600 text-white rounded-md text-lg hover:bg-green-700 transition flex items-center justify-center">
 								<button >
 									Login
 								</button>
